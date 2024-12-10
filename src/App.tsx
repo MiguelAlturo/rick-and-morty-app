@@ -4,13 +4,13 @@ import Layout from "./pages/Layout.js";
 import Favorites from "./pages/Favorites/index.js";
 import Character from "./pages/character/index.js";
 import Characters from "./pages/characters/index.js";
-import { useRoutes } from 'react-router-dom';
+import { Navigate, redirect, useRoutes } from 'react-router-dom';
 
 const routeConfig = [
   { path: '/', element: <Characters /> },
   { path: '/favorites', element: <Favorites /> },
-  { path: '/personajes', element: <Characters /> },
-  { path: '/personajes/:id', element: <Character /> },
+  { path: '/character', element: <Navigate to="/" />, skipLazyload: true },
+  { path: '/character/:id', element: <Character /> },
   { path: '*', element: <Characters /> },
   // Add more route configurations as needed
 ];

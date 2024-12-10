@@ -1,22 +1,21 @@
-.card_caracter{
+.card__character{
     text-align: center;
     background: #0a53564f;
     border-radius: 5px;
     padding: 5px;
-    gap:5px;
+    gap:20px;
     display: flex;
-    flex-direction: column;
-    max-width: 200px;
+    flex-direction: row;
+    width: 450px;
     position: relative;
-    &_name{
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: " ..";
+    &_container{
+        padding: 30px 0px;
+        text-align: left;
     }
     &_specie,
     &_status{
         display: flex;
-        justify-content: space-around;
+        justify-content: start;
         align-items: center;
         &--alive{
             background: green;
@@ -26,6 +25,35 @@
         }
         &--unknown{
             background-color: gray;
+        }
+        &_icon{
+            color: red;
+            font-size: 20px;
+            position: relative;
+            
+        }
+        
+    }
+    &_status{
+        position: absolute;
+        right: 0px;
+        top:0px;
+        display: flex;
+        gap: 5px;
+        .active{
+            &::after{
+                opacity: 1;
+            }
+        }
+        &::after{
+            content: "Estado del personaje";
+            background-color: #0003;
+            color: #fff;
+            position: absolute;
+            top: 0px;
+            opacity: 1;
+            padding: 5px;
+            transition: 0.3s all;
         }
     }
     &_favorite{
