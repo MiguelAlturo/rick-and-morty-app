@@ -1,0 +1,41 @@
+.card_caracter{
+    text-align: center;
+    background: #0a53564f;
+    border-radius: 5px;
+    padding: 5px;
+    gap:5px;
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    position: relative;
+    &_name{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: " ..";
+    }
+    &_specie,
+    &_status{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        &--alive{
+            background: green;
+        }
+        &--dead{
+            background-color: red;
+        }
+        &--unknown{
+            background-color: gray;
+        }
+    }
+    &_favorite{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        .btn-favorite{
+            background: #0b0b0b54;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+// @use "sass:meta";
+// @include meta.load-css('./scss//tools/media-queries');
+// @include meta.load-css('./scss/settings/breackpoints');
+// @include meta.load-css('./scss//settings/elements');
+// @include meta.load-css('./scss/objects/badge');
+@use './scss//tools/media-queries';
+@use './scss/settings/breackpoints';
+
+@use './scss//settings/elements';
+@use './scss/objects/badge';
