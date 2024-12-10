@@ -7,11 +7,11 @@ import Characters from "./pages/characters/index.js";
 import { useRoutes } from 'react-router-dom';
 
 const routeConfig = [
-  { path: '/', element: <Layout /> },
+  { path: '/', element: <Characters /> },
   { path: '/favorites', element: <Favorites /> },
   { path: '/personajes', element: <Characters /> },
   { path: '/personajes/:id', element: <Character /> },
-  { path: '*', element: <Layout /> },
+  { path: '*', element: <Characters /> },
   // Add more route configurations as needed
 ];
 
