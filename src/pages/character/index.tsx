@@ -75,7 +75,7 @@ const CharacterPage = () => {
             <h2>{character.gender}</h2>
           </article>
           <article className="day-forecast">
-            <h2>{character?.created}</h2>
+            <h2>{character.created?.toString().split('T')[0]}</h2>
           </article>
         </div>
       </div>
@@ -83,7 +83,7 @@ const CharacterPage = () => {
         <h2>Capitulos donde aparece</h2>
         <ul>
           {episodies.length > 0 &&
-            episodies.map((epis, index) => <li key={index}><b>Capitulo:</b> {epis.name} <br /><b>creado: {epis.air_date}</b> <hr /></li>)
+            episodies.map((epis, index) => <li key={index}><b>Capitulo:</b> {epis.name} <br /><b>Al aire: {epis.air_date}</b> <hr /></li>)
           }
         </ul>
       </article>
