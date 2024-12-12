@@ -36,24 +36,28 @@
     }
     &_status{
         position: absolute;
-        right: 0px;
-        top:0px;
+        right: 4px;
+        bottom: 7px;
         display: flex;
         gap: 5px;
-        .active{
-            &::after{
-                opacity: 1;
-            }
-        }
+  
         &::after{
             content: "Estado del personaje";
             background-color: #0003;
             color: #fff;
             position: absolute;
-            top: 0px;
-            opacity: 1;
+            left: -62px;
+            top: -40px;
+            opacity: 0;
+            visibility: hidden;
             padding: 5px;
             transition: 0.3s all;
+        }
+        &:hover{
+            &::after{
+                visibility: visible;
+                opacity: 1;
+            }
         }
     }
     &_favorite{

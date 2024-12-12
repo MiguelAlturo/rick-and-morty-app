@@ -1,6 +1,7 @@
 import { CharactersGrid, simpleCharacters } from "../../characters/index";
 import { getCharacters } from "../../api/services";
 import { useState, useEffect } from "react";
+import Header from "../../components/Header";
 
 const simpleCharacteresState: simpleCharacters[] = [];
 
@@ -15,9 +16,13 @@ const Characters = () => {
   }, [])
 
   return (
-    <div>
-      {<CharactersGrid characters={data} />}
-    </div>
+    <>
+      <Header />
+      <div>
+        {<CharactersGrid characters={data} />}
+      </div>
+    </>
+
   );
 };
 

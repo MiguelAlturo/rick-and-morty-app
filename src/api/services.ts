@@ -1,35 +1,43 @@
-import { simpleCharacters, CharactersResponse } from "../characters";
+import { simpleCharacters, CharactersResponse, Character, Episodie, simpleEpisodie } from "../characters";
 
 const baseApiUrl = `https://rickandmortyapi.com/api`;
 
 export const getCharacters = async (): Promise<simpleCharacters[]> => {
     const data: CharactersResponse = await fetch(`${baseApiUrl}/character`)
         .then(res => res.json());
-    console.log(data);
-
     const characters = data.results.map(character => ({
-        id: character.id.toString(),
+        id: character.id,
         name: character.name,
         species: character.species,
         status: character.status
     }));
-    // console.table(characters);
 
     return characters
 };
 
-export const getCharacter = async ({ id }: String): Promise<simpleCharacters> => {
-    const data: CharactersResponse = await fetch(`${baseApiUrl}/character/${id}`)
+export const getCharacter = async (id: number): Promise<simpleCharacters> => {
+    const data: Character = await fetch(`${baseApiUrl}/character/${id.toString()}`)
         .then(res => res.json());
-    console.log(data);
+    const character = {
+        id: data.id,
+        name: data.name,
+        species: data.species,
+        status: data.status,
+        type: data.type,
+        gender: data.gender,
+        origin: data.origin,
+        image: data.image,
+        episode: data.episode,
+        url: data.url,
+        created: data.created,
+    }
 
-    const characters = data.results.map(character => ({
-        id: character.id.toString(),
-        name: character.name,
-        species: character.species,
-        status: character.status
-    }));
-    console.table(characters);
+    return character
+};
 
-    return characters
+export const getEpisodies = async (ids: string): Promise<simpleEpisodie[]> => {
+    console.log("URL:", `${baseApiUrl}/episode/${ids}`);
+    const data: Episodie[] = await fetch(`${baseApiUrl}/episode/${ids}`)
+        .then(res => res.json());
+    return data
 };

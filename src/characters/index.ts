@@ -4,3 +4,6 @@ export { CharactersGrid } from "./components/CharacterGrid";
 export type { CharactersResponse } from "./interfaces/characters-response";
 export type { Character } from "./interfaces/character";
 export type { simpleCharacters } from "./interfaces/simple-character";
+export type { Episodie } from "./interfaces/Episodie";
+export type { simpleEpisodie } from "./interfaces/simple-episodie";
+
