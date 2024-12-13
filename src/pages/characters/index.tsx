@@ -18,9 +18,7 @@ const Characters = () => {
   return (
     <>
       <Header />
-      <div>
-        {<CharactersGrid characters={data} />}
-      </div>
+      {<CharactersGrid characters={data} />}
     </>
 
   );

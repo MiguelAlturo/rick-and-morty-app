@@ -1,4 +1,5 @@
 import { simpleCharacters, CharactersResponse, Character, Episodie, simpleEpisodie } from "../characters";
+import { CharacterPagination } from "../characters/interfaces/character-pagination";
 
 const baseApiUrl = `https://rickandmortyapi.com/api`;
 
@@ -37,7 +38,29 @@ export const getCharacter = async (id: number): Promise<simpleCharacters> => {
 
 export const getEpisodies = async (ids: string): Promise<simpleEpisodie[]> => {
     console.log("URL:", `${baseApiUrl}/episode/${ids}`);
-    const data: Episodie[] = await fetch(`${baseApiUrl}/episode/${ids}`)
+    const data: Episodie[] | Episodie = await fetch(`${baseApiUrl}/episode/${ids}`)
         .then(res => res.json());
-    return data
+    if (Array.isArray(data)) {
+        return data
+    } else {
+        return [data]
+    }
+};
+
+
+export const getPage = async (ids: string): Promise<Character[]> => {
+    console.log("URL:", `${baseApiUrl}/episode/${ids}`);
+    const data: CharacterPagination = await fetch(`${baseApiUrl}/episode/${ids}`)
+        .then(res => res.json());
+    const characters = data.results.map(character => ({
+        id: character.id,
+        name: character.name,
+        species: character.species,
+        status: character.status
+    }));
+    if (Array.isArray(data)) {
+        return data
+    } else {
+        return [data]
+    }
 };

@@ -8,7 +8,7 @@ export const localStorageMiddleware = (state: MiddlewareAPI) => {
         console.log({ action });
         if (action.type === 'Characteres/toggleFavorite') {
             const { characters } = state.getState() as RootState;
-            localStorage.setItem('favorite-pokemons', JSON.stringify(characters))
+            localStorage.setItem('favorite-characters', JSON.stringify(characters))
         }
     }
 }

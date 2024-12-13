@@ -25,7 +25,6 @@ export const charactersSlice = createSlice({
             const { id } = character
             if (!!state.favorites[id]) {
                 delete state.favorites[id];
-                // return
             } else {
                 state.favorites[id] = character
             }

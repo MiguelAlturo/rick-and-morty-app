@@ -60,6 +60,13 @@
             }
         }
     }
+    &_more{
+        background: transparent;
+        padding: 5px 20px;
+        border-radius: 15px;
+        color: #fff;
+        border: 1px solid;
+    }
     &_favorite{
         position: absolute;
         left: 0px;

@@ -8,7 +8,7 @@ const routeConfig = [
   { path: '/favorites', element: <Favorites /> },
   { path: '/character', element: <Navigate to="/" />, skipLazyload: true },
   { path: '/character/:id', element: <CharacterPage /> },
-  { path: '*', element: <Characters /> },
+  { path: '*', element: <Navigate to="/" />, skipLazyload: true },
   // Add more route configurations as needed
 ];
 
