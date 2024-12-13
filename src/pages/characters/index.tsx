@@ -1,23 +1,35 @@
-import { CharactersGrid, simpleCharacters } from "../../characters/index";
+import { CharacterPagination, CharactersGrid, PaginationProps, simpleCharacters } from "../../characters/index";
 import { getCharacters } from "../../api/services";
 import { useState, useEffect } from "react";
-import Header from "../../components/Header";
+import { Pagination } from "../../characters/index";
 
 const simpleCharacteresState: simpleCharacters[] = [];
+const pagination: PaginationProps = {};
 
 const Characters = () => {
   const [data, setData] = useState(simpleCharacteresState)
+  const [paginationState, setPaginationState] = useState(pagination)
+
 
   useEffect(() => {
-    getCharacters()
-      .then((characteres: simpleCharacters[]) => {
-        setData(characteres)
-      });
+    changePagination("1");
   }, [])
+
+  const changePagination = (page: string) => {
+    getCharacters(page)
+      .then(({ characters, pagination }: CharacterPagination) => {
+        setData(characters)
+        setPaginationState(pagination)
+      });
+  }
 
   return (
     <>
       {<CharactersGrid characters={data} />}
+      {<Pagination {
+        ...paginationState
+      }
+        changePagination={changePagination.bind(this)} />}
     </>
 
   );

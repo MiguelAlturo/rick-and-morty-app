@@ -1,0 +1,31 @@
+.pagination {
+  width: 100%;
+  display: block;
+  &_list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    &_btn {
+      list-style: none;
+      button {
+        background-color: #1c3233;
+      }
+      &.disabled {
+        button {
+          background: #ccc;
+          color: #fff;
+        }
+      }
+    }
+    &_page {
+      list-style: none;
+      background: #fff;
+      color: #000;
+      font-size: 19px;
+      padding: 2px 10px;
+      border-radius: 5px;
+    }
+  }
+}

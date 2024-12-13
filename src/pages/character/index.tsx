@@ -3,27 +3,13 @@ import { useParams } from "react-router-dom";
 import { getCharacter } from "../../api/services";
 import { Character } from "../../characters";
 import { SimpleCharacter } from "../../characters";
-import Header from "../../components/Header";
 
-const simpleCharacterState: Character = {
-  id: 0,
-  name: "",
-  status: "",
-  species: "",
-  type: "",
-  gender: "",
-  origin: { url: 'undefined', name: 'undefined' },
-  location: { url: 'undefined', name: 'undefined' },
-  image: "",
-  episode: [],
-  url: "",
-  created: new Date()
-};
+const simpleCharacterState: Character = {} as Character;
 
 const CharacterPage = () => {
   const [character, setCharacter] = useState(simpleCharacterState)
 
-  const { id }: any = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
 

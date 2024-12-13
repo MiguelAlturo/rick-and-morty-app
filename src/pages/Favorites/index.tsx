@@ -1,12 +1,12 @@
 
 import { CharactersGrid } from "../../characters";
-import Header from "../../components/Header";
 import { useAppSelector } from "../../store";
 import { IoHeartOutline } from 'react-icons/io5'
 
 const Favorites = () => {
   const charactersFavorites = Object.values(useAppSelector(state => state.characters.favorites))
   console.log(charactersFavorites);
+
 
   return (
     <>

@@ -12,6 +12,7 @@ export const CharactersGrid = ({ characters }: Props) => {
             {characters.map((character) => (
                 <CharacterCard character={character} key={character.id} />
             ))}
+
         </div>
     )
 }
