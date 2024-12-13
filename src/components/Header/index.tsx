@@ -4,7 +4,7 @@ import { NavItem } from "./NavItem";
 import { Search } from "./Search";
 
 const navItems = [
-  { path: "/characters", text: "Personajes" },
+  { path: "/", text: "Home" },
   { path: "/favorites", text: "Favoritos" }
 ];
 

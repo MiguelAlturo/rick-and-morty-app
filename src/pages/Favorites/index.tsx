@@ -10,7 +10,6 @@ const Favorites = () => {
 
   return (
     <>
-      <Header />
       {charactersFavorites.length ?
         <section>
           <h2>Lista de favoritos</h2>

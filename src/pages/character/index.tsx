@@ -38,7 +38,6 @@ const CharacterPage = () => {
 
   return (
     <>
-      <Header />
       <section>
         {
           <SimpleCharacter   {...character} />

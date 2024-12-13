@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Character } from '../../interfaces/character'
 import { simpleEpisodie } from '../../interfaces/simple-episodie'
-import { IoHeartOutline, IoHeart, IoFitness } from 'react-icons/io5'
+import { IoHeartOutline, IoHeart } from 'react-icons/io5'
 import { getEpisodies } from '../../../api/services'
 import { useAppDispatch, useAppSelector } from '../../../store'
 import { toggleFavorite } from '../../../store/characters/charactersSlice'
