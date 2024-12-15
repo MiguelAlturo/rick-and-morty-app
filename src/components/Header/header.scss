@@ -6,6 +6,7 @@
     background-color: rgb(28, 50, 51);
     box-shadow: 0px -6px 8px 0px #828282;
     display: flex;
+    gap: 20px;
     &_nav {
       display: flex;
       margin: 0px;
@@ -15,14 +16,19 @@
       &_list {
         text-align: left;
         display: flex;
-        gap: 20px;
+        gap: 10px;
         margin: 0px;
+        padding: 0px;
         &_item,
         &_item--active {
           padding: 20px 0px;
           color: #fff;
           font-size: 20px;
           position: relative;
+          list-style: none;
+          a {
+            color: #fff;
+          }
           &::after {
             content: "";
             position: absolute;

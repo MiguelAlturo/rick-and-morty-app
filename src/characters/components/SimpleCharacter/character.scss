@@ -41,14 +41,12 @@
       align-items: center;
       gap: 15px;
       flex-direction: column;
+
       img {
         border-radius: 500px;
-      }
-      h1 {
-        // position: absolute;
-        // bottom: 15px;
-        // font-size: 12px;
-        // text-shadow: rgb(3, 3, 3) 1px 0 10px;
+        @media (max-width: 768px) {
+          max-width: 200px;
+        }
       }
     }
     &_caracterist {
@@ -68,12 +66,18 @@
         flex-direction: column;
         box-shadow: -3px 6px 9px -3px #232323;
         border-radius: 15px;
+        @media (max-width: 768px) {
+          width: 30%;
+        }
         h2 {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           gap: 10px;
+          @media (max-width: 768px) {
+            font-size: 18px;
+          }
         }
         .btn-favorite {
           background-color: transparent;

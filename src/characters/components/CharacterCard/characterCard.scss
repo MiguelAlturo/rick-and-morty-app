@@ -34,12 +34,22 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+  p,
+  b {
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
   }
   &_specie,
   &_status {
     display: flex;
     justify-content: start;
     align-items: center;
+    flex-wrap: wrap;
     &--alive {
       background: green;
     }
@@ -68,6 +78,9 @@
     border-radius: 15px;
     color: #fff;
     border: 1px solid;
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
     &:hover {
       border-color: #fff;
       color: #fff;
