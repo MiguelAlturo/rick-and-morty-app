@@ -9,9 +9,13 @@ export const Search = () => {
     const handletInputChange = (text: string) => {
         dispatch(setsearchText(text));
     }
-
-    const handletToggleSearch = () => {
-
+    const resetSearch = (isReset: Boolean) => {
+        if (isReset) {
+            setIsSearchble(true)
+        } else {
+            setIsSearchble(false)
+        }
+        dispatch(setsearchText(""));
     }
     return (
         <section className='header_sticky_nav_search'>
@@ -22,9 +26,9 @@ export const Search = () => {
                         <form >
                             <input name='search' placeholder='Buscar personaje' type="text" onChange={(e) => handletInputChange(e.target.value)} />
                         </form>
-                        <IoCloseCircle onClick={() => setIsSearchble(false)} />
+                        <IoCloseCircle onClick={() => resetSearch(false)} />
                     </> :
-                    <IoSearchSharp onClick={() => setIsSearchble(true)} />
+                    <IoSearchSharp onClick={() => resetSearch(true)} />
                 }
             </div>
 
