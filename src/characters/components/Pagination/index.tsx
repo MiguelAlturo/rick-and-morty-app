@@ -12,7 +12,7 @@ export const Pagination = ({ next, previus, changePagination }: PaginationProps 
                         </li>
                         <li className="pagination_list_page">{next ? parseInt(next) - 1 : previus ? parseInt(previus) - 1 : 0}</li>
                         <li className={`pagination_list_btn ${!next && 'disabled'}`}>
-                            <button onClick={() => changePagination(next)}>Siguiete</button>
+                            <button onClick={() => changePagination(next)}>Siguiente</button>
                         </li>
                     </ul>
                 </nav>

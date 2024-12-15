@@ -1,21 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useAppDispatch } from '../../../store';
+import { setsearchText } from '../../../store/search/searchSlice';
 
-const initialText: string = ""
 export const Search = () => {
-    const [text, setTtext] = useState(initialText)
 
-    // const handletInputChange = (e) => {
-    //     e.preventDefault()
-    //     console.log(text)
-    // }
-    useEffect(() => {
-        console.log(text)
-    }, [text])
+    const dispatch = useAppDispatch()
+    const handletInputChange = (text: string) => {
+        dispatch(setsearchText(text));
+    }
 
     return (
         <section className='header_sticky_nav_search'>
             <form >
-                <input name='search' placeholder='Buscar personaje' type="text" onChange={(e) => setTtext(e.target.value)} />
+                <input name='search' placeholder='Buscar personaje' type="text" onChange={(e) => handletInputChange(e.target.value)} />
             </form>
         </section>
     )

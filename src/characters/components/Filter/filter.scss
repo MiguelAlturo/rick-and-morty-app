@@ -1,0 +1,15 @@
+.filter_section {
+  display: flex;
+  justify-content: start;
+  gap: 15px;
+  padding: 10px 30px;
+  &_container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    select {
+      padding: 10px 15px;
+      border-radius: 15px;
+    }
+  }
+}

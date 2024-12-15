@@ -1,8 +1,28 @@
-//   mediaqueries
-$breakpoints: (
-    'sm':(min-width:480px),
-    'md':(min-width:768px),
-    'lg':(min-width:992px),
-    'xl':(min-width:1200px),
-    'xxl':(min-width:1400px)
-  );
+// @mixin tablet {
+//   @media screen and (max-width: 900px) {
+//     @content;
+//   }
+// }
+// @mixin mobile {
+//   @media screen and (max-width: 520px) {
+//     @content;
+//   }
+// }
+// //   mediaqueries
+// $breakpoints: (
+//   "sm": (
+//     min-width: 480px,
+//   ),
+//   "md": (
+//     min-width: 768px,
+//   ),
+//   "lg": (
+//     min-width: 992px,
+//   ),
+//   "xl": (
+//     min-width: 1200px,
+//   ),
+//   "xxl": (
+//     min-width: 1400px,
+//   ),
+// );

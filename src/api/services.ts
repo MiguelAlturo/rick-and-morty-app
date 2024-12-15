@@ -1,5 +1,4 @@
-import { simpleCharacters, Character, Episodie, simpleEpisodie, CharacterPagination } from "../characters";
-import { CharacterPaginationResponse } from "../characters/interfaces/pagination-response";
+import { simpleCharacters, Character, Episodie, simpleEpisodie, CharacterPagination, CharacterPaginationResponse } from "../characters";
 
 const baseApiUrl = `https://rickandmortyapi.com/api`;
 
@@ -10,8 +9,48 @@ interface Props {
     especie?: string
 }
 
-export const getCharacters = async ({ page, name, status, especie }: Props): Promise<CharacterPagination> => {
-    const data: CharacterPaginationResponse = await fetch(`${baseApiUrl}/character/?page=${page}`)
+const getQueryString = (props: Props) => {
+    const searchParams: Record<string, any> = new URLSearchParams();
+    if (!!props.page) {
+        searchParams.append("page", props.page);
+    }
+    if (!!props.name) {
+        searchParams.append("name", props.name);
+    }
+    if (!!props.status) {
+        searchParams.append("status", props.status);
+    }
+    if (!!props.especie) {
+        searchParams.append("species", props.especie);
+    }
+    return searchParams.toString();
+}
+
+// const getSpecies = async () => {
+//     let data: string[] = [];
+//     for (let index = 0; index < 42; index++) {
+//         await new Promise(r => setTimeout(r, 1000))
+//         const result: CharacterPaginationResponse = await fetch(`${baseApiUrl}/character/?page=${index}`)
+//             .then(res => res.json());
+//         const characters = result.results.map(character => (character.species));
+//         let uniqueItems = [...new Set(characters.concat(data))]
+//         data = [...uniqueItems]
+//     }
+
+//     console.log(data)
+
+//     let results = [...new Set(data)]
+
+//     console.log(results);
+// }
+
+export const getCharacters = async (props: Props): Promise<CharacterPagination> => {
+
+    // getSpecies(); función para obtener todas las especies
+
+    let query = getQueryString(props);
+    let url = query != "" ? `${baseApiUrl}/character/?${query}` : `${baseApiUrl}/character/?page=1`
+    const data: CharacterPaginationResponse = await fetch(`${url}`)
         .then(res => res.json());
     const characters = data.results.map(character => ({
         id: character.id,
@@ -26,7 +65,6 @@ export const getCharacters = async ({ page, name, status, especie }: Props): Pro
             next: data.info.next !== null ? data.info.next.substring(data.info.next.lastIndexOf('/') + 1).split('=')[1] : data.info.prev
         }
     }
-
     return dataObjet
 };
 

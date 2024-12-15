@@ -5,13 +5,10 @@ import { IoHeartOutline } from 'react-icons/io5'
 
 const Favorites = () => {
   const charactersFavorites = Object.values(useAppSelector(state => state.characters.favorites))
-  console.log(charactersFavorites);
-
-
   return (
     <>
       {charactersFavorites.length ?
-        <section>
+        <section className="favorites">
           <h2>Lista de favoritos</h2>
           <CharactersGrid characters={charactersFavorites} />
         </section>
