@@ -3,6 +3,7 @@ import { simpleCharacters } from '../../interfaces/simple-character'
 import { useAppDispatch, useAppSelector } from '../../../store'
 import { toggleFavorite } from '../../../store/characters/charactersSlice'
 import './characterCard.scss'
+import { Link } from 'react-router-dom'
 
 
 interface Props {
@@ -32,7 +33,7 @@ export const CharacterCard = ({ character }: Props) => {
           <IoFitness title='Estado' className='card__character_status_icon' />
           <span className={'badge card__character_status--' + status.toLowerCase()}>{stts}</span>
         </div>
-        <a className='card__character_more' href={`/character/${id}`}>Ver detalle</a>
+        <Link className='card__character_more' to={`/character/${id}`}>Ver detalle</Link>
         <article className="card__character_favorite">
           <button className='btn-favorite' onClick={onToggle}>
             {isFavorite ? <IoHeart title='Favorito' /> : <IoHeartOutline title='No Favorito' />}
