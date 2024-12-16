@@ -11,7 +11,6 @@ interface Props {
 export const Providers = ({ children }: Props) => {
     useEffect(() => {
         const favorites = JSON.parse(localStorage.getItem('favorite-characters') ?? '{}')
-        // console.log(favorites)
         store.dispatch(setFavoriteCharacters(favorites))
     }, [])
 

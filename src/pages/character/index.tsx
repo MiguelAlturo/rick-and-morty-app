@@ -15,7 +15,6 @@ const CharacterPage = () => {
 
     getCharacter(id)
       .then((character) => {
-        console.log(character);
         setCharacter(character)
       });
   }, [])

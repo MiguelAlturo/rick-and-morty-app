@@ -23,7 +23,6 @@ export const SimpleCharacter = (character: Character) => {
     }, [character])
 
     const getEpisodiesId = () => {
-        console.log("character: ", character);
         const { episode } = character
         const ids: Array<string> = []
         episode?.map((epi) => {
